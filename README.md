@@ -311,4 +311,48 @@ Format pakietu:
 
 Nagłówek: Protokół JES dodaje dodatkowe pole nagłówka do pakietów JeżoverIP w celu zawarcia informacji o szyfrowaniu. Pole nagłówka może zawierać identyfikator protokołu JES i flagi dotyczące szyfrowania.
 Szyfrowane dane: Pole nagłówka może zawierać zaszyfrowane dane pakietu przy użyciu klucza publicznego odbiorcy.
-Proces komunikacji:
+
+# Warstwa druga protokołu JeżOverIP
+```py
+import socket
+
+# Adresy MAC jeży nadawcy i odbiorcy
+nadawca_mac = "00:11:22:33:44:55"
+odbiorca_mac = "AA:BB:CC:DD:EE:FF"
+
+# Funkcja do tworzenia ramki danych
+def utworz_rame(adres_mac_nadawcy, adres_mac_odbiorcy, dane):
+    ramka = f"{adres_mac_nadawcy}|{adres_mac_odbiorcy}|{dane}"
+    return ramka
+
+# Funkcja do przetwarzania odebranych ramek
+def przetworz_ramke(ramka):
+    dane = ramka.split("|")[2]
+    print("Odebrano dane:", dane)
+
+# Tworzenie gniazda do komunikacji
+gniazdo = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+# Ustalenie adresu i portu dla gniazda
+adres = ("127.0.0.1", 5000)
+gniazdo.bind(adres)
+
+while True:
+    # Odbieranie danych
+    dane, adres = gniazdo.recvfrom(1024)
+    ramka = dane.decode("utf-8")
+
+    # Sprawdzanie, czy ramka jest dla naszego jeża
+    adres_mac_odbiorcy = ramka.split("|")[1]
+    if adres_mac_odbiorcy == nadawca_mac:
+        # Przetwarzanie odebranej ramki
+        przetworz_ramke(ramka)
+
+    # Przykład wysłania ramki danych
+    dane = "Przykładowe dane"
+    ramka = utworz_rame(nadawca_mac, odbiorca_mac, dane)
+    gniazdo.sendto(ramka.encode("utf-8"), (adres_mac_odbiorcy, 5000))
+
+# Zamknięcie gniazda po zakończeniu
+gniazdo.close()
+```
