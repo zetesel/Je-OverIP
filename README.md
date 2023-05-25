@@ -1,49 +1,52 @@
-# Dokumentacja techniczna protokołu JeżoverIP
+# Dokumentacja techniczna protokołu JeżOverIP
 Spis treści: <br>
-1. Wprowadzenie
-2. Architektura systemu
-3. Pakiet JeżoverIP
-4. Ramka JeżoverEthernet
-5. Protokół JeżoverIP
-6. Protokół JeżoverEthernet
-7. Implementacja
-8. Podsumowanie
-## 1. Wprowadzenie
-Protokół JeżoverIP jest specjalnym protokołem służącym do przesyłania pakietów IP oraz ramek Ethernet za pomocą jeży oraz jeżowodów. Jego głównym celem jest umożliwienie komunikacji sieciowej w niekonwencjonalny i kreatywny sposób, wykorzystując naturalne zdolności jeży do przenoszenia i przekazywania obiektów. Niniejsza dokumentacja techniczna opisuje szczegóły protokołu JeżoverIP, jego architekturę, strukturę pakietów i ramek, oraz sposób implementacji.
+1. [Wprowadzenie](#wprowadzenie)
+2. [Architektura systemu](#architektura-systemu)
+3. [Pakiet JeżOverIP](#pakiet-jeżoverip)
+4. [Ramka JeżOverEthernet](#ramka-jeżoverethernet)
+5. [Protokół JeżOverIP](#protokół-jeżoverip)
+6. [Protokół JeżOverEthernet](#protokół-jeżoverethernet)
+7. [Implementacja](#implementacja)
+8. [Podsumowanie](#podsumowanie)
 
-## 2. Architektura systemu
-Architektura systemu JeżoverIP składa się z następujących elementów:
+## Wprowadzenie
+Protokół JeżOverIP jest specjalnym protokołem służącym do przesyłania pakietów IP oraz ramek Ethernet za pomocą jeży oraz jeżowodów. Jego głównym celem jest umożliwienie komunikacji sieciowej w niekonwencjonalny i kreatywny sposób, wykorzystując naturalne zdolności jeży do przenoszenia i przekazywania obiektów. Niniejsza dokumentacja techniczna opisuje szczegóły protokołu JeżOverIP, jego architekturę, strukturę pakietów i ramek, oraz sposób implementacji.
 
-Jeże (agenci): Jeże są podstawowymi jednostkami przenoszącymi pakiety IP i ramki Ethernet. Każdy jeż pełni rolę agenta w protokole JeżoverIP.
+## Architektura systemu
+Architektura systemu JeżOverIP składa się z następujących elementów:
+
+Jeże (agenci): Jeże są podstawowymi jednostkami przenoszącymi pakiety IP i ramki Ethernet. Każdy jeż pełni rolę agenta w protokole JeżOverIP.
 Jeżowody: Jeżowody są specjalnymi ścieżkami, którymi jeże przemieszczają się i przekazują pakiety IP i ramki Ethernet.
 Komputery: Komputery pełnią rolę źródła i odbiorcy pakietów IP oraz ramek Ethernet. Są odpowiedzialne za generowanie, wysyłanie, odbieranie i przetwarzanie danych.
 
-## 3. Pakiet JeżoverIP
-Pakiet JeżoverIP jest jednostką danych używaną w protokole JeżoverIP. Składa się z nagłówka pakietu oraz pola danych. Struktura pakietu JeżoverIP przedstawia się następująco:
+## Pakiet JeżOverIP
+Pakiet JeżOverIP jest jednostką danych używaną w protokole JeżOverIP. Składa się z nagłówka pakietu oraz pola danych. Struktura pakietu JeżOverIP przedstawia się następująco:
 
-diff
-Copy code
+diff <br>
+Copy code <br>
++-----------------+ <br>
+| Nagłówek       | <br>
++-----------------+ <br>
+| Dane            | <br>
 +-----------------+
-| Nagłówek       |
-+-----------------+
-| Dane            |
-+-----------------+
-Nagłówek pakietu JeżoverIP zawiera informacje kontrolne i adresowe, takie jak adres źródłowy, adres docelowy, długość pakietu itp.
 
-## 4. Ramka JeżoverEthernet
-Ramka JeżoverEthernet jest jednostką danych używaną w protokole JeżoverEthernet. Składa się z nagłówka ramki oraz pola danych. Struktura ramki JeżoverEthernet przedstawia się następująco:
+Nagłówek pakietu JeżOverIP zawiera informacje kontrolne i adresowe, takie jak adres źródłowy, adres docelowy, długość pakietu itp.
 
-diff
-Copy code
-+-----------------+
-| Nagłówek       |
-+-----------------+
-| Dane            |
-+-----------------+
-Nagłówek ramki JeżoverEthernet zawiera informacje kontrolne i adresowe, takie jak adres MAC źródłowy, adres MAC docelowy, typ protokołu itp.
+## Ramka JeżOverEthernet
+Ramka JeżOverEthernet jest jednostką danych używaną w protokole JeżOverEthernet. Składa się z nagłówka ramki oraz pola danych. Struktura ramki JeżOverEthernet przedstawia się następująco:
 
-## 5. Protokół JeżoverIP
-Protokół JeżoverIP definiuje sposób przesyłania pakietów IP
+diff <br>
+Copy code <br>
++-----------------+ <br>
+| Nagłówek       | <br>
++-----------------+ <br>
+| Dane            | <br>
++-----------------+ <br>
+
+Nagłówek ramki JeżOverEthernet zawiera informacje kontrolne i adresowe, takie jak adres MAC źródłowy, adres MAC docelowy, typ protokołu itp.
+
+## Protokół JeżOverIP
+Protokół JeżOverIP definiuje sposób przesyłania pakietów IP
 
 
 
@@ -53,45 +56,45 @@ User
 add more technical stuff
 ChatGPT
 
-5. Protokół JeżoverIP (kontynuacja)
-Adresowanie w protokole JeżoverIP
-Protokół JeżoverIP wykorzystuje specjalne adresy jeży do identyfikacji ich lokalizacji w sieci. Adresy jeży są unikalne i przypisywane im są podczas inicjalizacji systemu. Każdy pakiet JeżoverIP zawiera adres źródłowy i adres docelowy, które są wykorzystywane do kierowania pakietów między jeżami.
+## Protokół JeżOverIP (kontynuacja)
+Adresowanie w protokole JeżOverIP
+Protokół JeżOverIP wykorzystuje specjalne adresy jeży do identyfikacji ich lokalizacji w sieci. Adresy jeży są unikalne i przypisywane im są podczas inicjalizacji systemu. Każdy pakiet JeżOverIP zawiera adres źródłowy i adres docelowy, które są wykorzystywane do kierowania pakietów między jeżami.
 
-Przekazywanie pakietów w protokole JeżoverIP
-Proces przekazywania pakietów w protokole JeżoverIP odbywa się na podstawie informacji zawartych w nagłówku pakietu. Jeż, który odbierze pakiet, analizuje adres docelowy i podejmuje odpowiednie działania. Jeżeli adres docelowy odpowiada adresowi jeża, na którym aktualnie się znajduje, pakiet jest dostarczany do lokalnego komputera. W przeciwnym przypadku jeż przekazuje pakiet do innego jeża na podstawie informacji o trasie zawartych w tabeli routingu.
+Przekazywanie pakietów w protokole JeżOverIP
+Proces przekazywania pakietów w protokole JeżOverIP odbywa się na podstawie informacji zawartych w nagłówku pakietu. Jeż, który odbierze pakiet, analizuje adres docelowy i podejmuje odpowiednie działania. Jeżeli adres docelowy odpowiada adresowi jeża, na którym aktualnie się znajduje, pakiet jest dostarczany do lokalnego komputera. W przeciwnym przypadku jeż przekazuje pakiet do innego jeża na podstawie informacji o trasie zawartych w tabeli routingu.
 
-Tabela routingu w protokole JeżoverIP
-Każdy jeż w protokole JeżoverIP utrzymuje tabelę routingu, która zawiera informacje o dostępnych jeżach oraz ich lokalizacjach w sieci. Ta tabela jest wykorzystywana do podejmowania decyzji dotyczących przekazywania pakietów. Jeże mogą wymieniać się informacjami o swojej lokalizacji i aktualizować tabelę routingu na podstawie komunikacji między sobą.
+Tabela routingu w protokole JeżOverIP
+Każdy jeż w protokole JeżOverIP utrzymuje tabelę routingu, która zawiera informacje o dostępnych jeżach oraz ich lokalizacjach w sieci. Ta tabela jest wykorzystywana do podejmowania decyzji dotyczących przekazywania pakietów. Jeże mogą wymieniać się informacjami o swojej lokalizacji i aktualizować tabelę routingu na podstawie komunikacji między sobą.
 
-Protokół ICMP w protokole JeżoverIP
-Protokół JeżoverIP obejmuje również implementację protokołu ICMP (Internet Control Message Protocol) do obsługi komunikatów kontrolnych i diagnostycznych. Komputery mogą generować komunikaty ICMP, takie jak żądania Echo Request (ping) i odbierać komunikaty ICMP, takie jak odpowiedzi Echo Reply.
+Protokół ICMP w protokole JeżOverIP
+Protokół JeżOverIP obejmuje również implementację protokołu ICMP (Internet Control Message Protocol) do obsługi komunikatów kontrolnych i diagnostycznych. Komputery mogą generować komunikaty ICMP, takie jak żądania Echo Request (ping) i odbierać komunikaty ICMP, takie jak odpowiedzi Echo Reply.
 
-## 6. Protokół JeżoverEthernet
-Adresowanie w protokole JeżoverEthernet
-Protokół JeżoverEthernet wykorzystuje standardowe adresy MAC (Media Access Control) do identyfikacji interfejsów sieciowych jeży oraz komputerów. Adres MAC jest unikalny dla każdego interfejsu sieciowego i jest używany do kierowania ramek Ethernet między nimi.
+## Protokół JeżOverEthernet
+Adresowanie w protokole JeżOverEthernet
+Protokół JeżOverEthernet wykorzystuje standardowe adresy MAC (Media Access Control) do identyfikacji interfejsów sieciowych jeży oraz komputerów. Adres MAC jest unikalny dla każdego interfejsu sieciowego i jest używany do kierowania ramek Ethernet między nimi.
 
-Przekazywanie ramek w protokole JeżoverEthernet
+Przekazywanie ramek w protokole JeżOverEthernet
 Jeże wykorzystują jeżowody do przemieszczania się i przekazywania ramek Ethernet. Kiedy jeż odbiera ramkę, analizuje adres docelowy zawarty w nagłówku ramki i podejmuje odpowiednie działania. Jeśli adres docelowy odpowiada adresowi interfejsu sieciowego jeża, na którym aktualnie się znajduje, ramka jest dostarczana do tego interfejsu. W przeciwnym przypadku jeż przekazuje ramkę do innego jeża na podstawie informacji o trasie zawartych w tabeli routingu.
 
-Tabela MAC w protokole JeżoverEthernet
-Każdy jeż w protokole JeżoverEthernet utrzymuje tabelę MAC, która mapuje adresy MAC interfejsów sieciowych na lokalizacje jeży w sieci. Ta tabela jest wykorzystywana do podejmowania decyzji dotyczących przekazywania ramek. Jeże mogą wymieniać się informacjami o swojej lokalizacji i aktualizować tabelę MAC na podstawie komunikacji między sobą.
+Tabela MAC w protokole JeżOverEthernet
+Każdy jeż w protokole JeżOverEthernet utrzymuje tabelę MAC, która mapuje adresy MAC interfejsów sieciowych na lokalizacje jeży w sieci. Ta tabela jest wykorzystywana do podejmowania decyzji dotyczących przekazywania ramek. Jeże mogą wymieniać się informacjami o swojej lokalizacji i aktualizować tabelę MAC na podstawie komunikacji między sobą.
 
-## 7. Implementacja
-Implementacja protokołu JeżoverIP i JeżoverEthernet wymaga stworzenia oprogramowania zarówno dla jeży, jak i dla komputerów. Oprogramowanie dla jeży powinno obsługiwać przekazywanie pakietów IP i ramek Ethernet, a także utrzymywać tabele routingu i MAC. Oprogramowanie dla komputerów powinno generować pakiety IP i ramki Ethernet, a także obsługiwać komunikację z jeżami w celu wysyłania i odbierania danych.
+## Implementacja
+Implementacja protokołu JeżOverIP i JeżOverEthernet wymaga stworzenia oprogramowania zarówno dla jeży, jak i dla komputerów. Oprogramowanie dla jeży powinno obsługiwać przekazywanie pakietów IP i ramek Ethernet, a także utrzymywać tabele routingu i MAC. Oprogramowanie dla komputerów powinno generować pakiety IP i ramki Ethernet, a także obsługiwać komunikację z jeżami w celu wysyłania i odbierania danych.
 
-Implementacja protokołu JeżoverIP i JeżoverEthernet może być realizowana w różnych językach programowania, w zależności od preferencji i środowiska programistycznego. Ważne jest, aby zapewnić zgodność z specyfikacjami protokołu JeżoverIP i JeżoverEthernet opisanymi w tej dokumentacji.
+Implementacja protokołu JeżOverIP i JeżOverEthernet może być realizowana w różnych językach programowania, w zależności od preferencji i środowiska programistycznego. Ważne jest, aby zapewnić zgodność z specyfikacjami protokołu JeżOverIP i JeżOverEthernet opisanymi w tej dokumentacji.
 
-## 8. Podsumowanie
-Dokumentacja techniczna protokołu JeżoverIP przedstawia szczegóły architektury systemu, strukturę pakietów JeżoverIP i ramek JeżoverEthernet, oraz opisuje sposób przekazywania danych między jeżami i komputerami. Implementacja protokołu wymaga oprogramowania dla jeży i komputerów, które obsługuje przesyłanie pakietów IP i ramek Ethernet oraz utrzymanie tabel routingu i MAC. Protokół JeżoverIP i JeżoverEthernet oferują nietypowe podejście do komunikacji sieciowej, wykorzystując naturalne zdolności jeży do przenoszenia danych.
-
-
+## Podsumowanie
+Dokumentacja techniczna protokołu JeżOverIP przedstawia szczegóły architektury systemu, strukturę pakietów JeżOverIP i ramek JeżOverEthernet, oraz opisuje sposób przekazywania danych między jeżami i komputerami. Implementacja protokołu wymaga oprogramowania dla jeży i komputerów, które obsługuje przesyłanie pakietów IP i ramek Ethernet oraz utrzymanie tabel routingu i MAC. Protokół JeżOverIP i JeżOverEthernet oferują nietypowe podejście do komunikacji sieciowej, wykorzystując naturalne zdolności jeży do przenoszenia danych.
 
 
 
-User
-napisz odpowiednie oprogramowanie dla jeży działające w protokole jeżoverIP
-ChatGPT
-Aby zaimplementować oprogramowanie dla jeży działających w protokole JeżoverIP, należy uwzględnić następujące funkcjonalności:
+
+
+User <br>
+napisz odpowiednie oprogramowanie dla jeży działające w protokole JeżOverIP <br>
+ChatGPT <br>
+Aby zaimplementować oprogramowanie dla jeży działających w protokole JeżOverIP, należy uwzględnić  następujące funkcjonalności: <br>
 
 Komunikacja z innymi jeżami: Jeże powinny być w stanie komunikować się między sobą w celu przekazywania pakietów IP. Oprogramowanie jeża powinno zawierać mechanizmy komunikacyjne, takie jak gniazda sieciowe, do nawiązywania połączeń i przekazywania danych.
 
@@ -101,9 +104,9 @@ Odbieranie i analiza pakietów IP: Oprogramowanie jeża powinno być w stanie od
 
 Przekazywanie pakietów do odpowiedniego celu: Na podstawie tabeli routingu i analizy pakietów, oprogramowanie jeża powinno podejmować decyzje dotyczące przekazywania pakietów do odpowiednich celów. Jeżeli adres docelowy odpowiada lokalnemu komputerowi, pakiet powinien być dostarczony do odpowiedniego interfejsu sieciowego na jeżu. W przeciwnym przypadku pakiet powinien być przekazany do innego jeża na podstawie informacji o trasie w tabeli routingu.
 
-Obsługa komunikatów ICMP: Protokół JeżoverIP może obsługiwać komunikaty ICMP dla komunikacji kontrolnej i diagnostycznej. Oprogramowanie jeża powinno umożliwiać generowanie i odbieranie komunikatów ICMP, takich jak żądania Echo Request (ping) i odpowiedzi Echo Reply.
+Obsługa komunikatów ICMP: Protokół JeżOverIP może obsługiwać komunikaty ICMP dla komunikacji kontrolnej i diagnostycznej. Oprogramowanie jeża powinno umożliwiać generowanie i odbieranie komunikatów ICMP, takich jak żądania Echo Request (ping) i odpowiedzi Echo Reply.
 
-Implementacja oprogramowania dla jeży w protokole JeżoverIP może być realizowana w różnych językach programowania, takich jak Python, C++, Java itp. Wymaga to zapoznania się z specyfikacjami protokołu JeżoverIP oraz używanych bibliotek i frameworków do obsługi komunikacji sieciowej.
+Implementacja oprogramowania dla jeży w protokole JeżOverIP może być realizowana w różnych językach programowania, takich jak Python, C++, Java itp. Wymaga to zapoznania się z specyfikacjami protokołu JeżOverIP oraz używanych bibliotek i frameworków do obsługi komunikacji sieciowej.
 
 
 
@@ -112,7 +115,7 @@ Implementacja oprogramowania dla jeży w protokole JeżoverIP może być realizo
 User
 napisz gotowe oprogramowanie w języku pyton
 ChatGPT
-Oto przykładowa implementacja oprogramowania dla jeży działających w protokole JeżoverIP w języku Python:
+Oto przykładowa implementacja oprogramowania dla jeży działających w protokole JeżOverIP w języku Python:
 
 python
 Copy code
@@ -160,7 +163,7 @@ W tabeli routingu routing_table zdefiniowane są pary adresów i jeży, do któr
 
 Główna pętla odbierania pakietów używa recvfrom do odbierania pakietów z gniazda jeża. Następnie analizowany jest pakiet, na przykład w celu wyciągnięcia adresu docelowego. Funkcja forward_packet jest wywoływana w celu przekazania pakietu na podstawie adresu docelowego.
 
-Oczywiście powyższy kod stanowi tylko przykład podstawowej implementacji oprogramowania dla jeży w protokole JeżoverIP. W praktyce należy dostosować kod do konkretnych wymagań i specyfikacji protokołu JeżoverIP, włączając w to obsługę pakietów IP, komunikację z innymi jeżami i aktualizację tabeli routingu.
+Oczywiście powyższy kod stanowi tylko przykład podstawowej implementacji oprogramowania dla jeży w protokole JeżOverIP. W praktyce należy dostosować kod do konkretnych wymagań i specyfikacji protokołu JeżOverIP, włączając w to obsługę pakietów IP, komunikację z innymi jeżami i aktualizację tabeli routingu.
 
 
 
@@ -169,7 +172,7 @@ Oczywiście powyższy kod stanowi tylko przykład podstawowej implementacji opro
 User
 teraz napisz to samo oprogramowanie w języku jeż++
 ChatGPT
-Przykładowa implementacja oprogramowania dla jeży działających w protokole JeżoverIP w języku Jeż++ może wyglądać następująco:
+Przykładowa implementacja oprogramowania dla jeży działających w protokole JeżOverIP w języku Jeż++ może wyglądać następująco:
 
 cpp
 Copy code
@@ -232,15 +235,15 @@ N
 
 
 User
-jak działa szyfrowanie w protokole jeżoverip?
+jak działa szyfrowanie w protokole JeżOverip?
 ChatGPT
-W standardowej specyfikacji protokołu JeżoverIP nie ma bezpośrednio wbudowanego mechanizmu szyfrowania danych. Protokół JeżoverIP skupia się głównie na przekazywaniu pakietów IP przy użyciu jeży jako nośnika. Bezpieczeństwo przesyłanych danych zależy więc głównie od zastosowania dodatkowych warstw szyfrowania na poziomie protokołu IP (np. IPsec) lub warstw wyższych, takich jak SSL/TLS.
+W standardowej specyfikacji protokołu JeżOverIP nie ma bezpośrednio wbudowanego mechanizmu szyfrowania danych. Protokół JeżOverIP skupia się głównie na przekazywaniu pakietów IP przy użyciu jeży jako nośnika. Bezpieczeństwo przesyłanych danych zależy więc głównie od zastosowania dodatkowych warstw szyfrowania na poziomie protokołu IP (np. IPsec) lub warstw wyższych, takich jak SSL/TLS.
 
-Jeżeli konieczne jest zastosowanie szyfrowania w protokole JeżoverIP, można rozważyć następujące podejścia:
+Jeżeli konieczne jest zastosowanie szyfrowania w protokole JeżOverIP, można rozważyć następujące podejścia:
 
 Wykorzystanie dodatkowej warstwy szyfrowania: W celu zabezpieczenia przesyłanych danych można zastosować dodatkową warstwę szyfrowania, taką jak IPsec. IPsec dostarcza mechanizmy uwierzytelniania, integralności danych i poufności. Można skonfigurować IPsec na jeżach i komputerach, aby szyfrować pakiety IP przesyłane między nimi.
 
-Wykorzystanie warstw wyższych protokołów: JeżoverIP można również połączyć z protokołami bezpieczeństwa na warstwie aplikacji, takimi jak SSL/TLS. Na przykład, jeżeli jeż działa jako bramka do serwera webowego, można zastosować szyfrowanie SSL/TLS między klientem a jeżem oraz między jeżem a serwerem webowym, zapewniając bezpieczną komunikację na poziomie aplikacji.
+Wykorzystanie warstw wyższych protokołów: JeżOverIP można również połączyć z protokołami bezpieczeństwa na warstwie aplikacji, takimi jak SSL/TLS. Na przykład, jeżeli jeż działa jako bramka do serwera webowego, można zastosować szyfrowanie SSL/TLS między klientem a jeżem oraz między jeżem a serwerem webowym, zapewniając bezpieczną komunikację na poziomie aplikacji.
 
 Warto zauważyć, że implementacja takiego szyfrowania wymaga dodatkowego kodu i konfiguracji, a także wykorzystania odpowiednich bibliotek i narzędzi, które obsługują protokoły szyfrowania. Szyfrowanie powinno być stosowane zgodnie z najlepszymi praktykami bezpieczeństwa w zależności od wymagań i kontekstu aplikacji.
 
@@ -249,28 +252,28 @@ Warto zauważyć, że implementacja takiego szyfrowania wymaga dodatkowego kodu 
 
 
 User
-napisz protokół szyfrowania do zaimplementowania w jeżowodach w sieci jeżoverIP
+napisz protokół szyfrowania do zaimplementowania w jeżowodach w sieci JeżOverIP
 ChatGPT
-Oto przykładowa specyfikacja protokołu szyfrowania, który można zaimplementować w jeżowodach w sieci JeżoverIP:
+Oto przykładowa specyfikacja protokołu szyfrowania, który można zaimplementować w jeżowodach w sieci JeżOverIP:
 
 Nazwa protokołu: JeżSecure (JSec)
 
-Cel protokołu: Protokół JeżSecure zapewnia bezpieczne szyfrowanie przesyłanych pakietów w sieci JeżoverIP, zapewniając poufność, integralność i uwierzytelnianie danych.
+Cel protokołu: Protokół JeżSecure zapewnia bezpieczne szyfrowanie przesyłanych pakietów w sieci JeżOverIP, zapewniając poufność, integralność i uwierzytelnianie danych.
 
 Sposób działania:
 
-Uwierzytelnianie: Protokół JSec wykorzystuje algorytm uwierzytelniania oparty na kluczach, na przykład HMAC (Hash-based Message Authentication Code), do weryfikacji integralności i autentyczności pakietów. Każdy jeż i jeżowód w sieci JeżoverIP posiada wspólny klucz uwierzytelniający.
-Szyfrowanie: Protokół JSec wykorzystuje symetryczne szyfrowanie do zapewnienia poufności danych. Każdy jeż i jeżowód w sieci JeżoverIP posiada wspólny klucz szyfrowania. Przykładem algorytmu szyfrowania może być AES (Advanced Encryption Standard) z kluczem o długości 256 bitów.
+Uwierzytelnianie: Protokół JSec wykorzystuje algorytm uwierzytelniania oparty na kluczach, na przykład HMAC (Hash-based Message Authentication Code), do weryfikacji integralności i autentyczności pakietów. Każdy jeż i jeżowód w sieci JeżOverIP posiada wspólny klucz uwierzytelniający.
+Szyfrowanie: Protokół JSec wykorzystuje symetryczne szyfrowanie do zapewnienia poufności danych. Każdy jeż i jeżowód w sieci JeżOverIP posiada wspólny klucz szyfrowania. Przykładem algorytmu szyfrowania może być AES (Advanced Encryption Standard) z kluczem o długości 256 bitów.
 Negocjacja kluczy: Przed rozpoczęciem komunikacji, jeże i jeżowody przeprowadzają proces negocjacji kluczy w celu ustalenia wspólnego klucza uwierzytelniania i klucza szyfrowania. Może być wykorzystany protokół Diffie-Hellmana lub inny protokół do ustalenia klucza.
 Format pakietu:
 
-Nagłówek: Protokół JSec dodaje dodatkowe pole nagłówka do pakietów JeżoverIP w celu zawarcia informacji o uwierzytelnianiu i szyfrowaniu. Pole nagłówka może zawierać informacje takie jak identyfikator protokołu JSec, flagi uwierzytelniania i szyfrowania.
+Nagłówek: Protokół JSec dodaje dodatkowe pole nagłówka do pakietów JeżOverIP w celu zawarcia informacji o uwierzytelnianiu i szyfrowaniu. Pole nagłówka może zawierać informacje takie jak identyfikator protokołu JSec, flagi uwierzytelniania i szyfrowania.
 Dane uwierzytelniające: W przypadku uwierzytelniania HMAC, pole nagłówka może zawierać HMAC wygenerowany na podstawie danych pakietu i wspólnego klucza uwierzytelniającego.
 Szyfrowane dane: Pole nagłówka może zawierać zaszyfrowane dane pakietu przy użyciu wspólnego klucza szyfrowania.
 Proces komunikacji:
 
 Jeżowód i jeż inicjują negocjację kluczy, wymieniając się informacjami i wykonując protokół do ustalenia wspólnego klucza uwierzytelniania i klucza szyfrowania.
-Po ustaleniu kluczy, jeże i jeżowody mogą bezpiecznie przesyłać pakiety JeżoverIP, dodając do nich nagłówek JSec z uwierzytelnieniem i szyfrowaniem.
+Po ustaleniu kluczy, jeże i jeżowody mogą bezpiecznie przesyłać pakiety JeżOverIP, dodając do nich nagłówek JSec z uwierzytelnieniem i szyfrowaniem.
 Odbiorca pakietu używa klucza uwierzytelniającego do weryfikacji integralności pakietu poprzez obliczenie HMAC i porównanie go z otrzymanym wartością.
 Odbiorca pakietu używa klucza szyfrowania do odszyfrowania zaszyfrowanych danych w pakiecie.
 Ważne jest, aby implementacja protokołu JSec była zgodna z dobrze znacznymi algorytmami i protokołami szyfrowania oraz uwierzytelniania. Należy również przeprowadzić testy bezpieczeństwa i uwzględnić odpowiednie mechanizmy zarządzania kluczami, takie jak rotacja kluczy.
@@ -284,13 +287,13 @@ dlaczego mam wykorzystywać AES zamiast JeżEncryptionStandard (JES)
 ChatGPT
 Przepraszam za zamieszanie, ale JeżEncryptionStandard (JES) nie jest znany protokołem szyfrowania. Był to jedynie przykładowy fikcyjny akronim, którym posłużyłem się w odpowiedzi.
 
-W rzeczywistości, w kontekście protokołu JeżoverIP, nie istnieje specjalnie dedykowany standard szyfrowania o nazwie JES. Właściwy wybór algorytmu szyfrowania zależy od wielu czynników, takich jak bezpieczeństwo, wydajność, dostępność bibliotek i narzędzi implementacyjnych.
+W rzeczywistości, w kontekście protokołu JeżOverIP, nie istnieje specjalnie dedykowany standard szyfrowania o nazwie JES. Właściwy wybór algorytmu szyfrowania zależy od wielu czynników, takich jak bezpieczeństwo, wydajność, dostępność bibliotek i narzędzi implementacyjnych.
 
 AES (Advanced Encryption Standard) jest popularnym i szeroko stosowanym algorytmem szyfrowania symetrycznego. Jest dobrze zbadany i uznawany za bezpieczny, a implementacje są powszechnie dostępne w różnych językach programowania, w tym w Pythonie i innych.
 
-W przypadku wyboru algorytmu szyfrowania dla protokołu JeżoverIP zalecam stosowanie znanych i uznanych algorytmów szyfrowania, takich jak AES. Ważne jest, aby stosować zalecenia i najlepsze praktyki dotyczące bezpieczeństwa, takie jak używanie kluczy o odpowiedniej długości, bezpieczne przechowywanie kluczy i uwzględnienie innych aspektów bezpieczeństwa, takich jak uwierzytelnianie i integralność danych.
+W przypadku wyboru algorytmu szyfrowania dla protokołu JeżOverIP zalecam stosowanie znanych i uznanych algorytmów szyfrowania, takich jak AES. Ważne jest, aby stosować zalecenia i najlepsze praktyki dotyczące bezpieczeństwa, takie jak używanie kluczy o odpowiedniej długości, bezpieczne przechowywanie kluczy i uwzględnienie innych aspektów bezpieczeństwa, takich jak uwierzytelnianie i integralność danych.
 
-Wnioskując, AES jest rekomendowanym i powszechnie stosowanym algorytmem szyfrowania, który warto rozważyć dla implementacji protokołu szyfrowania w sieci JeżoverIP.
+Wnioskując, AES jest rekomendowanym i powszechnie stosowanym algorytmem szyfrowania, który warto rozważyć dla implementacji protokołu szyfrowania w sieci JeżOverIP.
 
 
 
@@ -299,19 +302,19 @@ Wnioskując, AES jest rekomendowanym i powszechnie stosowanym algorytmem szyfrow
 User
 napisz protokół JeżEncryptionStandard
 ChatGPT
-Przykładowa specyfikacja protokołu JeżEncryptionStandard (JES), będącego fikcyjnym protokołem szyfrowania w sieci JeżoverIP, może wyglądać następująco:
+Przykładowa specyfikacja protokołu JeżEncryptionStandard (JES), będącego fikcyjnym protokołem szyfrowania w sieci JeżOverIP, może wyglądać następująco:
 
 Nazwa protokołu: JeżEncryptionStandard (JES)
 
-Cel protokołu: Protokół JES zapewnia bezpieczne szyfrowanie przesyłanych pakietów w sieci JeżoverIP, zapewniając poufność i integralność danych.
+Cel protokołu: Protokół JES zapewnia bezpieczne szyfrowanie przesyłanych pakietów w sieci JeżOverIP, zapewniając poufność i integralność danych.
 
 Sposób działania:
 
 Szyfrowanie: Protokół JES wykorzystuje symetryczne szyfrowanie do zapewnienia poufności danych. Wybrany algorytm szyfrowania to {algorytm_szyfrowania}, na przykład AES (Advanced Encryption Standard).
-Klucze szyfrowania: Każdy jeż i jeżowód w sieci JeżoverIP generuje unikalny parę kluczy szyfrowania - klucz publiczny i klucz prywatny. Klucz publiczny jest używany do szyfrowania danych, podczas gdy klucz prywatny jest wykorzystywany do ich odszyfrowania. Klucze są wymieniane między jeżami i jeżowodami podczas negocjacji.
+Klucze szyfrowania: Każdy jeż i jeżowód w sieci JeżOverIP generuje unikalny parę kluczy szyfrowania - klucz publiczny i klucz prywatny. Klucz publiczny jest używany do szyfrowania danych, podczas gdy klucz prywatny jest wykorzystywany do ich odszyfrowania. Klucze są wymieniane między jeżami i jeżowodami podczas negocjacji.
 Format pakietu:
 
-Nagłówek: Protokół JES dodaje dodatkowe pole nagłówka do pakietów JeżoverIP w celu zawarcia informacji o szyfrowaniu. Pole nagłówka może zawierać identyfikator protokołu JES i flagi dotyczące szyfrowania.
+Nagłówek: Protokół JES dodaje dodatkowe pole nagłówka do pakietów JeżOverIP w celu zawarcia informacji o szyfrowaniu. Pole nagłówka może zawierać identyfikator protokołu JES i flagi dotyczące szyfrowania.
 Szyfrowane dane: Pole nagłówka może zawierać zaszyfrowane dane pakietu przy użyciu klucza publicznego odbiorcy.
 
 # Warstwa druga protokołu JeżOverIP
