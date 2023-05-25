@@ -1,23 +1,24 @@
-Dokumentacja techniczna protokołu JeżoverIP
-Spis treści
-Wprowadzenie
-Architektura systemu
-Pakiet JeżoverIP
-Ramka JeżoverEthernet
-Protokół JeżoverIP
-Protokół JeżoverEthernet
-Implementacja
-Podsumowanie
+# Dokumentacja techniczna protokołu JeżoverIP
+Spis treści: <br>
 1. Wprowadzenie
+2. Architektura systemu
+3. Pakiet JeżoverIP
+4. Ramka JeżoverEthernet
+5. Protokół JeżoverIP
+6. Protokół JeżoverEthernet
+7. Implementacja
+8. Podsumowanie
+## 1. Wprowadzenie
 Protokół JeżoverIP jest specjalnym protokołem służącym do przesyłania pakietów IP oraz ramek Ethernet za pomocą jeży oraz jeżowodów. Jego głównym celem jest umożliwienie komunikacji sieciowej w niekonwencjonalny i kreatywny sposób, wykorzystując naturalne zdolności jeży do przenoszenia i przekazywania obiektów. Niniejsza dokumentacja techniczna opisuje szczegóły protokołu JeżoverIP, jego architekturę, strukturę pakietów i ramek, oraz sposób implementacji.
 
-2. Architektura systemu
+## 2. Architektura systemu
 Architektura systemu JeżoverIP składa się z następujących elementów:
 
 Jeże (agenci): Jeże są podstawowymi jednostkami przenoszącymi pakiety IP i ramki Ethernet. Każdy jeż pełni rolę agenta w protokole JeżoverIP.
 Jeżowody: Jeżowody są specjalnymi ścieżkami, którymi jeże przemieszczają się i przekazują pakiety IP i ramki Ethernet.
 Komputery: Komputery pełnią rolę źródła i odbiorcy pakietów IP oraz ramek Ethernet. Są odpowiedzialne za generowanie, wysyłanie, odbieranie i przetwarzanie danych.
-3. Pakiet JeżoverIP
+
+## 3. Pakiet JeżoverIP
 Pakiet JeżoverIP jest jednostką danych używaną w protokole JeżoverIP. Składa się z nagłówka pakietu oraz pola danych. Struktura pakietu JeżoverIP przedstawia się następująco:
 
 diff
@@ -29,7 +30,7 @@ Copy code
 +-----------------+
 Nagłówek pakietu JeżoverIP zawiera informacje kontrolne i adresowe, takie jak adres źródłowy, adres docelowy, długość pakietu itp.
 
-4. Ramka JeżoverEthernet
+## 4. Ramka JeżoverEthernet
 Ramka JeżoverEthernet jest jednostką danych używaną w protokole JeżoverEthernet. Składa się z nagłówka ramki oraz pola danych. Struktura ramki JeżoverEthernet przedstawia się następująco:
 
 diff
@@ -41,7 +42,7 @@ Copy code
 +-----------------+
 Nagłówek ramki JeżoverEthernet zawiera informacje kontrolne i adresowe, takie jak adres MAC źródłowy, adres MAC docelowy, typ protokołu itp.
 
-5. Protokół JeżoverIP
+## 5. Protokół JeżoverIP
 Protokół JeżoverIP definiuje sposób przesyłania pakietów IP
 
 
@@ -51,6 +52,7 @@ Protokół JeżoverIP definiuje sposób przesyłania pakietów IP
 User
 add more technical stuff
 ChatGPT
+
 5. Protokół JeżoverIP (kontynuacja)
 Adresowanie w protokole JeżoverIP
 Protokół JeżoverIP wykorzystuje specjalne adresy jeży do identyfikacji ich lokalizacji w sieci. Adresy jeży są unikalne i przypisywane im są podczas inicjalizacji systemu. Każdy pakiet JeżoverIP zawiera adres źródłowy i adres docelowy, które są wykorzystywane do kierowania pakietów między jeżami.
@@ -64,7 +66,7 @@ Każdy jeż w protokole JeżoverIP utrzymuje tabelę routingu, która zawiera in
 Protokół ICMP w protokole JeżoverIP
 Protokół JeżoverIP obejmuje również implementację protokołu ICMP (Internet Control Message Protocol) do obsługi komunikatów kontrolnych i diagnostycznych. Komputery mogą generować komunikaty ICMP, takie jak żądania Echo Request (ping) i odbierać komunikaty ICMP, takie jak odpowiedzi Echo Reply.
 
-6. Protokół JeżoverEthernet
+## 6. Protokół JeżoverEthernet
 Adresowanie w protokole JeżoverEthernet
 Protokół JeżoverEthernet wykorzystuje standardowe adresy MAC (Media Access Control) do identyfikacji interfejsów sieciowych jeży oraz komputerów. Adres MAC jest unikalny dla każdego interfejsu sieciowego i jest używany do kierowania ramek Ethernet między nimi.
 
@@ -74,12 +76,12 @@ Jeże wykorzystują jeżowody do przemieszczania się i przekazywania ramek Ethe
 Tabela MAC w protokole JeżoverEthernet
 Każdy jeż w protokole JeżoverEthernet utrzymuje tabelę MAC, która mapuje adresy MAC interfejsów sieciowych na lokalizacje jeży w sieci. Ta tabela jest wykorzystywana do podejmowania decyzji dotyczących przekazywania ramek. Jeże mogą wymieniać się informacjami o swojej lokalizacji i aktualizować tabelę MAC na podstawie komunikacji między sobą.
 
-7. Implementacja
+## 7. Implementacja
 Implementacja protokołu JeżoverIP i JeżoverEthernet wymaga stworzenia oprogramowania zarówno dla jeży, jak i dla komputerów. Oprogramowanie dla jeży powinno obsługiwać przekazywanie pakietów IP i ramek Ethernet, a także utrzymywać tabele routingu i MAC. Oprogramowanie dla komputerów powinno generować pakiety IP i ramki Ethernet, a także obsługiwać komunikację z jeżami w celu wysyłania i odbierania danych.
 
 Implementacja protokołu JeżoverIP i JeżoverEthernet może być realizowana w różnych językach programowania, w zależności od preferencji i środowiska programistycznego. Ważne jest, aby zapewnić zgodność z specyfikacjami protokołu JeżoverIP i JeżoverEthernet opisanymi w tej dokumentacji.
 
-8. Podsumowanie
+## 8. Podsumowanie
 Dokumentacja techniczna protokołu JeżoverIP przedstawia szczegóły architektury systemu, strukturę pakietów JeżoverIP i ramek JeżoverEthernet, oraz opisuje sposób przekazywania danych między jeżami i komputerami. Implementacja protokołu wymaga oprogramowania dla jeży i komputerów, które obsługuje przesyłanie pakietów IP i ramek Ethernet oraz utrzymanie tabel routingu i MAC. Protokół JeżoverIP i JeżoverEthernet oferują nietypowe podejście do komunikacji sieciowej, wykorzystując naturalne zdolności jeży do przenoszenia danych.
 
 
