@@ -56,7 +56,7 @@ User
 add more technical stuff
 ChatGPT
 
-## Protokół JeżOverIP (kontynuacja)
+### Protokół JeżOverIP (kontynuacja)
 Adresowanie w protokole JeżOverIP
 Protokół JeżOverIP wykorzystuje specjalne adresy jeży do identyfikacji ich lokalizacji w sieci. Adresy jeży są unikalne i przypisywane im są podczas inicjalizacji systemu. Każdy pakiet JeżOverIP zawiera adres źródłowy i adres docelowy, które są wykorzystywane do kierowania pakietów między jeżami.
 
